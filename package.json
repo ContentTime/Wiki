@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "bun vitepress dev",
     "devhost": "bun vitepress dev --host",
-    "build": "bun vitepress build",
+    "ebuild": "bun vitepress build",
     "preview": "bun vitepress preview",
     "check": "markdownlint *.md && markdownlint src/",
     "attemptfix": "markdownlint --fix *.md && markdownlint --fix src/ && git status"
