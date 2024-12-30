@@ -1,0 +1,106 @@
+@import url(./home.scss);
+
+:root {
+  /* Default Colors */
+  --vp-c-default-1: #f1f3f7;
+  --vp-c-default-2: #e5e9f1;
+  --vp-c-default-3: #d5d8e0;
+  --vp-c-default-soft: #a3afbb29;
+
+  /* Brand Colors */
+  --vp-c-brand-1: #c4a5e8;
+  --vp-c-brand-2: #5d457a;
+  --vp-c-brand-3: #6a498f;
+  --vp-c-brand-soft: #fb718524;
+
+  /* Tip Colors (revised to match usage) */
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  /* Warning Colors */
+  --vp-c-warning-1: #f39c12;
+  --vp-c-warning-2: #e67e22;
+  --vp-c-warning-3: #d35400;
+  --vp-c-warning-soft: rgba(243, 156, 18, 0.15);
+
+  /* Danger Colors */
+  --vp-c-danger-1: #312422;
+  --vp-c-danger-2: #342421;
+  --vp-c-danger-3: #3d2723;
+  --vp-c-danger-soft: rgba(231, 76, 60, 0.15);
+
+  /* Background Colors */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f6f6f7;
+  --vp-c-bg-elv: #f6f6f7;
+  --vp-c-bg-soft: #f6f6f7;
+
+  /* Button Colors */
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #fff;
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #fff;
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #fff;
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+
+  /* Tip Block Colors */
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: #333;
+  --vp-custom-block-tip-bg: var(--vp-c-tip-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-tip-soft);
+  
+  .vp-doc .danger p.custom-block-title {
+    display: none;
+  }
+  .vp-doc div.danger.custom-block{
+    padding: 8px 16px 8px;
+  }
+
+  .vp-doc .warning p.custom-block-title {
+    display: none;
+  }
+  .vp-doc div.warning.custom-block{
+    padding: 8px 16px 8px;
+  }
+
+  .vp-doc .info p.custom-block-title {
+    display: none;
+  }
+  .vp-doc div.info.custom-block{
+    padding: 8px 16px 8px;
+  }
+}
+
+.dark {
+  /* Dark Mode Default Colors */
+  --vp-c-default-1: #3c434b;
+  --vp-c-default-2: #2e333b;
+  --vp-c-default-3: #24272d;
+  --vp-c-default-soft: #48545f29;
+
+  /* Dark Mode Brand Colors */
+  --vp-c-brand-1: #c4a5e8;
+  --vp-c-brand-2: #5d457a;
+  --vp-c-brand-3: #6a498f;
+  --vp-c-brand-soft: #fb718524;
+
+  /* Dark Mode Background Colors */
+  --vp-c-bg: #18181B;
+  --vp-c-bg-alt: #141417;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+}
+
+/* DocSearch Customization */
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+.rounded {
+  border-radius: 22px;
+}

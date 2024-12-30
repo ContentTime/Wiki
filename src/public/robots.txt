@@ -1,0 +1,11 @@
+Sitemap: https://wiki.content-time.pro/sitemap.xml
+
+User-agent: *
+Disallow: /server/
+Disallow: /site/
+
+User-agent: *
+Disallow: /assets/
+Disallow: /server/
+Disallow: /site/
+Disallow: /docs/

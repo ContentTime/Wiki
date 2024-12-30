@@ -1,0 +1,100 @@
+:root {
+  /* welcome text */
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(90deg, #9b55e2 55%, #b184e3 100%);
+
+  /* logo blur */
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #bf8ef5 10%,
+    #b169fa 10%
+  );
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+.dark {
+  /* welcome text */
+
+  --vp-home-hero-name-background: linear-gradient(90deg, #9b55e2 55%, #b184e3 100%);
+/* logo blur */
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #9b55e2 50%,
+    #b184e3 50%
+  );
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+a.icon::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-right: 0.5em;
+}
+
+a.main-site::before {
+  background-image: url('/assets/ctime-logo.svg');
+  transform: translate(0, 4%);
+}
+
+a.website::before {
+  background-image: url('/assets/website-screen.svg');
+  transform: translate(0, 28%);
+}
+
+a.discord::before {
+  background-image: url('/assets/light/discord-logo.svg');
+  transform: translate(0, 28%);
+}
+
+a.telegram::before {
+  background-image: url('/assets/light/telegram-logo.svg');
+  transform: translate(0, 28%);
+}
+
+a.book::before {
+  background-image: url('/assets/book-open.svg');
+  transform: scale(0.9, 0.9) translate(0, 30%);
+}
+
+a.pencil::before {
+  background-image: url('/assets/light/pencil-line.svg');
+  transform: translate(0, 28%);
+}
+
+
+.dark {
+
+  a.discord::before {
+    background-image: url('/assets/discord-logo.svg');
+  }
+
+  a.telegram::before {
+    background-image: url('/assets/telegram-logo.svg');
+  }
+
+  a.pencil::before {
+    background-image: url('/assets/pencil-line.svg');
+  }
+}
+
+.VPHero .VPImage {
+    transform: translate(-50%, -50%) scale(1.2, 1.2);
+}

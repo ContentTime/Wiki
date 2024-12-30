@@ -2,9 +2,7 @@ node_modules
 .vitepress/cache
 .vitepress/dist
 package-lock.json
-
 .idea
 .vscode
 .obsidian
-
-pnpm-lock.yaml
+bun.lockb
