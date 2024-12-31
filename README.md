@@ -29,3 +29,4 @@ bun i && bun ebuild
 1. [oarer](https://github.com/oarer) (тех часть, статьи. Discord: @oarer)
 
 2. [kvnrkll](https://github.com/kvnrkll) (куратор проекта, статьи. Discord: @kvnrkll)
+   
