@@ -1,0 +1,59 @@
+name: Deploy VDS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa "${{ secrets.IP }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: |
+          ssh -T -o StrictHostKeyChecking=no root@"${{ secrets.IP }}"<< 'EOF'
+            set -e
+
+            if ! command -v node &> /dev/null; then
+              curl -fsSL https://deb.nodesource.com/setup_21.x | bash -
+              apt-get install -y nodejs
+            fi
+
+            if ! command -v bun &> /dev/null; then
+              curl https://bun.sh/install | bash
+              export PATH="$HOME/.bun/bin:$PATH"
+              echo "$HOME/.bun/bin" >> ~/.bashrc
+              source ~/.bashrc
+            fi
+
+            if ! command -v pm2 &> /dev/null; then
+              npm install -g pm2
+            fi
+
+            cd /var/www/CTimeWiki || exit
+
+            git pull origin main || exit
+
+            bun install || exit
+
+            bun run nbuild || exit
+
+            pm2 stop ctimewiki || true
+            pm2 delete ctimewiki || true
+
+            pm2 start "bun run start" --name "ctimewiki" || exit
+            pm2 save || exit
+
+            echo "Deployment successful!"
+          EOF
