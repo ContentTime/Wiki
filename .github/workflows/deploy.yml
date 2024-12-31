@@ -47,12 +47,12 @@ jobs:
 
             bun install || exit
 
-            bun run nbuild || exit
+            bun run ebuild || exit
 
             pm2 stop ctimewiki || true
             pm2 delete ctimewiki || true
 
-            pm2 start "bun run start" --name "ctimewiki" || exit
+            pm2 start "bun run preview" --name "ctimewiki" || exit
             pm2 save || exit
 
             echo "Deployment successful!"
