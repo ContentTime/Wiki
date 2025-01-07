@@ -41,7 +41,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Условия использования', link: '/server/legal/terms-of-service' },
-        { text: 'Политика кондефициальности', link: '/legal/docs/privacy-policy' },
+        { text: 'Политика кондефициальности', link: '/server/legal/privacy-policy' },
       ],
     },
   ];
