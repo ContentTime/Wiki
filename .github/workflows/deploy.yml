@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy
         run: |
-          ssh -T -o StrictHostKeyChecking=no root@"${{ secrets.IP }}"<< 'EOF'
+          ssh -T -o StrictHostKeyChecking=no root@"${{ secrets.IP }}" << 'EOF'
             set -e
 
             if ! command -v node &> /dev/null; then
@@ -30,11 +30,13 @@ jobs:
               apt-get install -y nodejs
             fi
 
-            if ! command -v bun &> /dev/null; then
+            if ! [ -f "$HOME/.bun/bin/bun" ]; then
               curl https://bun.sh/install | bash
               export PATH="$HOME/.bun/bin:$PATH"
-              echo "$HOME/.bun/bin" >> ~/.bashrc
+              echo 'export PATH="$HOME/.bun/bin:$PATH"' >> ~/.bashrc
               source ~/.bashrc
+            else
+              export PATH="$HOME/.bun/bin:$PATH"
             fi
 
             if ! command -v pm2 &> /dev/null; then
@@ -45,14 +47,14 @@ jobs:
 
             git pull origin main || exit
 
-            bun install || exit
+            $HOME/.bun/bin/bun install || exit
 
-            bun run ebuild || exit
+            $HOME/.bun/bin/bun run ebuild || exit
 
             pm2 stop ctimewiki || true
             pm2 delete ctimewiki || true
 
-            pm2 start "bun run preview" --name "ctimewiki" || exit
+            pm2 start "$HOME/.bun/bin/bun run preview" --name "ctimewiki" || exit
             pm2 save || exit
 
             echo "Deployment successful!"
