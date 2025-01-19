@@ -1,6 +1,7 @@
 ---
 authors:
   - cyprisianthebeer
+  - oarer
 ---
 
 # Пользовательское соглашение
