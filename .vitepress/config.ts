@@ -20,8 +20,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Дебаг палочка', link: '/server/features/debugstick' },
-        { text: 'Покраска блоков одним кликом', link: '/server/features/easy-color' },
-        { text: 'Система городов', link: '/server/features/citys' },
         { text: 'Команды сервера', link: '/server/features/cmd-list' },
         { text: 'Кастомные крафты', link: '/server/features/custom-crafts' },
       ],
