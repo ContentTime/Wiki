@@ -40,7 +40,6 @@ function sidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Условия использования', link: '/server/legal/terms-of-service' },
         { text: 'Политика конфиденциальности', link: '/server/legal/privacy-policy' },
-        { text: 'Политическая партия', link: '/server/legal/polit' },
       ],
     },
   ];
