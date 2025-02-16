@@ -140,7 +140,6 @@ export default defineConfig({
     nav: [
       { text: "Главная", link: "/" },
       { text: "Сервер", link: "/server/", activeMatch: "server/*" },
-      { text: "Сайт", link: "/site/", activeMatch: "site/*" },
     ],
 
     sidebar: sidebar(),
